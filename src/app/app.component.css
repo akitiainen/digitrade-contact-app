@@ -1,0 +1,15 @@
+.app-header {
+  color: palevioletred;
+}
+
+.app-title {
+  color: springgreen;
+}
+
+.app-message {
+  color: deepskyblue;
+}
+
+#app-main{
+  color: lightgray;
+}
