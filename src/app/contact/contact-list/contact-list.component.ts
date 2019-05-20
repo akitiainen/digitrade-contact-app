@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {Contact} from '../contact';
+import {ContactService} from '../services/contact.service';
 
 @Component({
   selector: 'dtca-contact-list',
@@ -9,7 +10,7 @@ import {Contact} from '../contact';
 export class ContactListComponent implements OnInit {
   contacts: Contact[];
 
-  constructor() {
+  constructor(private contactService: ContactService) {
     this.contacts = [];
   }
 
