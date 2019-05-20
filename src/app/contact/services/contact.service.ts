@@ -5,7 +5,7 @@ import {Contact} from '../contact';
   providedIn: 'root'
 })
 export class ContactService {
-  private contacts: Contact[]
+  private contacts: Contact[];
 
   constructor() {
     this.contacts = [
