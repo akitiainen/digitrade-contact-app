@@ -13,12 +13,13 @@ export class ContactListComponent implements OnInit {
     this.contacts = [];
   }
 
+  onContactSelected(contact: Contact): void {
+    console.log(contact);
+    alert(contact.firstName);
+  }
+
   ngOnInit() {
-    this.contacts = [
-      new Contact('Katto', 'Kassinen', '0501231234'),
-      new Contact('Pikku', 'Veli', '100500'),
-      new Contact('Iids', 'Beibs', '<3<3<3<3<3')
-    ];
+    this.contacts = this.contactService.get();
     console.log(this.contacts);
   }
 
