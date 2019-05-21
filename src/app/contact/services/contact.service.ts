@@ -9,9 +9,9 @@ export class ContactService {
 
   constructor() {
     this.contacts = [
-      new Contact('Katto', 'Kassinen', '0501231234'),
-      new Contact('Pikku', 'Veli', '100500'),
-      new Contact('Iids', 'Beibs', '<3<3<3<3<3')
+      new Contact('Aki', 'Tiainen', '0501231234', 'aki.tiainen@student.saimia.fi', 'Kannelkatu 10 a 8', '53100', 'Lappeenranta'),
+      new Contact('Iida', 'Laukkanen', '0451229755', 'iida.laukkanen@student.saimia.fi', 'Teknologiapuistonkatu 4 D 42', '53850', 'Lappeenranta'),
+      new Contact('Iids', 'Beibs', '<3<3<3<3<3', 'iids.beibs@loveu.com', 'Pussochkramkatu 1', '<3<3<3', 'Lovecity')
     ];
 
     this.contacts.push(new Contact('Nalle', 'Puh', 'Hunajata'));
