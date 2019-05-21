@@ -1,1 +1,56 @@
-<mat-card>kalijaa</mat-card>
+<mat-card>
+  <div fxLayout="row" fxLayoutAlign="center start">
+    <div fxLayout="column" class = "width-detail">
+
+      <mat-form-field>
+        <input matInput [(ngModel)]="contact.firstName"
+               type="text"
+               required
+               placeholder="First name">
+
+      </mat-form-field>
+      <mat-form-field>
+        <input matInput [(ngModel)]="contact.lastName"
+               type="text"
+               required
+               placeholder="Last name">
+
+      </mat-form-field>
+      <mat-form-field>
+        <input matInput [(ngModel)]="contact.phone"
+               type="text"
+               required
+               placeholder="Phone">
+
+      </mat-form-field>
+      <mat-form-field>
+        <input matInput [(ngModel)]="contact.email"
+               type="text"
+               required
+               placeholder="Email">
+
+      </mat-form-field>
+      <mat-form-field>
+        <input matInput [(ngModel)]="contact.address"
+               type="text"
+               required
+               placeholder="Street address">
+
+      </mat-form-field>
+      <mat-form-field>
+        <input matInput [(ngModel)]="contact.postalCode"
+               type="text"
+               required
+               placeholder="Postal code">
+
+      </mat-form-field>
+      <mat-form-field>
+        <input matInput [(ngModel)]="contact.city"
+               type="text"
+               required
+               placeholder="City">
+
+      </mat-form-field>
+    </div>
+  </div>
+</mat-card>
