@@ -1,7 +1,10 @@
 <input value="{{selectedContactName}}">
 
-<div *ngFor="let c of contacts">
-  <dtca-contact-list-item
-    [contact]="c"
-    (selected)="onContactSelected($event)"></dtca-contact-list-item>
-</div>
+<mat-card class="card-detail">
+  <div *ngFor="let c of contacts" fxLayout="row" fxLayoutAlign="left middle">
+    <ngx-avatar name="{{c.firstName}} {{c.lastName}}"></ngx-avatar>
+    <dtca-contact-list-item
+      [contact]="c"
+      (selected)="onContactSelected($event)"></dtca-contact-list-item>
+  </div>
+</mat-card>
