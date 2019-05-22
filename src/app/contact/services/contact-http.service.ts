@@ -6,6 +6,7 @@ import {HttpClient} from '@angular/common/http';
 })
 export class ContactHttpService {
   private url: string;
+
   constructor(private http: HttpClient) {
     this.url = 'http://localhost:3000/contacts';
   }
