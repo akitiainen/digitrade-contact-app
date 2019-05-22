@@ -1,5 +1,8 @@
-import { Injectable } from '@angular/core';
+import {Injectable} from '@angular/core';
 import {HttpClient} from '@angular/common/http';
+import {Observable} from 'rxjs';
+import {Contact} from '../contact';
+import {map} from 'rxjs/operators';
 
 @Injectable({
   providedIn: 'root'
@@ -11,11 +14,14 @@ export class ContactHttpService {
     this.url = 'http://localhost:3000/contacts';
   }
 
-  get() {
+  get(): Observable<Contact[]> {
     return this.http
-      .get(this.url)
-      .subscribe( (data) => {
-        console.log(data);
-    });
-  }
+      .get<Contact[]>(this.url)
+      .pipe(
+        map(contacts => {
+          return contacts as Contact[];
+        })
+      );
+
+}
 }
