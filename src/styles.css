@@ -1,2 +1,44 @@
 /* You can add global styles to this file, and also import other style files */
 @import "~@angular/material/prebuilt-themes/indigo-pink.css";
+
+html, body {
+  padding: 0;
+  margin: 0;
+  background: #EEEEEE;
+  overflow: hidden;
+  height: 100%;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+}
+
+@font-face {
+  font-family: 'Material Icons';
+  font-style: normal;
+  font-weight: normal;
+}
+
+
+.material-icons {
+  font-family: 'Material Icons', serif;
+  font-size: 24px;
+  line-height: 100%;
+}
+
+.dtca-fab {
+  position: fixed !important;
+  bottom: 20px;
+  right: 20px;
+}
+
+.dtca-selected-item {
+  color: #1565C0;
+}
+
+.dtca-card-container {
+  padding: 16px;
+}
+
+.dtca-card {
+  max-width: 500px;
+  width: 100%;
+  margin: 16px;
+}

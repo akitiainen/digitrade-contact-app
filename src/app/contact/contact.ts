@@ -1,6 +1,7 @@
 import {post} from 'selenium-webdriver/http';
 
 export class Contact {
+  id: any;
   firstName: string;
   lastName: string;
   phone: string;
