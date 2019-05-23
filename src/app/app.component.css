@@ -1,3 +1,7 @@
-.width-detail{
-  max-width: 300px;
+.toolbar-details{
+  max-width: 333px;
+}
+
+.example-container{
+  max-width: 333px;
 }

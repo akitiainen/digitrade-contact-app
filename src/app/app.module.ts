@@ -16,7 +16,7 @@ import {HttpClientModule} from '@angular/common/http';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {AvatarModule} from 'ngx-avatar';
 import {RouterModule, Routes} from '@angular/router';
-import {MatSidenavModule, MatToolbarModule} from '@angular/material';
+import {MatOptionModule, MatSelectModule, MatSidenavModule, MatToolbarModule} from '@angular/material';
 
 const appRoutes: Routes = [
   {path: 'contacts', component: ContactListComponent},
@@ -46,7 +46,9 @@ const appRoutes: Routes = [
     AvatarModule,
     RouterModule.forRoot(appRoutes),
     MatToolbarModule,
-    MatSidenavModule
+    MatSidenavModule,
+    MatOptionModule,
+    MatSelectModule
   ],
   providers: [],
   bootstrap: [AppComponent]
