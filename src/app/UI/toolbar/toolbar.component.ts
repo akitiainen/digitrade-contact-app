@@ -2,7 +2,7 @@ import {Component, EventEmitter, OnInit, Output} from '@angular/core';
 import {Router} from '@angular/router';
 import {ToolbarOptions} from './toolbar-options';
 import {ToolbarService} from './toolbar.service';
-import {ToolbarActions} from './toolbar-actions';
+import {ToolbarAction} from './toolbar-action';
 
 @Component({
   selector: 'dtca-toolbar',

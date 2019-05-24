@@ -1,5 +1,12 @@
 .card-detail{
+  width: 80vw;
+  margin: auto;
+  display: block;
 }
 
-.button-details{
+.createButton{
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
 }
+

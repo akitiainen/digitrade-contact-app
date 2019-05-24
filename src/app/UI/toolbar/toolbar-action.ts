@@ -1,4 +1,4 @@
-export class ToolbarActions {
+export class ToolbarAction {
   action: any;
   icon: string;
 

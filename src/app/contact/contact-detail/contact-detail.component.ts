@@ -4,7 +4,7 @@ import {ActivatedRoute, Router} from '@angular/router';
 import {ContactService} from '../services/contact.service';
 import {ToolbarOptions} from '../../UI/toolbar/toolbar-options';
 import {ToolbarService} from '../../UI/toolbar/toolbar.service';
-import {ToolbarActions} from '../../UI/toolbar/toolbar-actions';
+import {ToolbarAction} from '../../UI/toolbar/toolbar-action';
 
 @Component({
   selector: 'dtca-contact-detail',
@@ -15,20 +15,23 @@ export class ContactDetailComponent implements OnInit {
   contact: Contact;
   contactId: any;
 
-  constructor(private router: Router, private route: ActivatedRoute, private contactService: ContactService, private toolbar: ToolbarService) {
+  constructor(private router: Router, private route: ActivatedRoute,
+              private contactService: ContactService, private toolbar: ToolbarService) {
     this.contact = new Contact();
   }
 
   ngOnInit() {
-    this.contactId = this.route.snapshot.paramMap.get('id');
+    this.contactId = this.route.snapshot.params.id;
+    this.toolbar.setToolbarOptions(new ToolbarOptions(true, 'Contact')
+    );
 
+    if (isNaN(this.contactId)) {
+      console.log(this.contactId);
+    } else {
     this.contactService.getContactById(this.contactId).subscribe(response => {
       this.contact = response;
     });
-
-    this.toolbar.setToolbarOptions(new ToolbarOptions(true, 'Contact', [
-      new ToolbarActions(this.onEdit(), 'edit')
-    ]));
+    }
   }
 
   onEdit() {

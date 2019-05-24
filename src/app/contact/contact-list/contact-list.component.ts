@@ -12,17 +12,11 @@ import {ToolbarOptions} from '../../UI/toolbar/toolbar-options';
 })
 export class ContactListComponent implements OnInit {
   contacts: Contact[];
-  selectedContactName: string;
 
   constructor(private contactService: ContactService, private router: Router, private toolbar: ToolbarService) {
     this.contacts = [];
-    this.selectedContactName = '';
   }
 
-  onContactSelected(contact): void {
-    // this.selectedContactName = contact.firstName + ' ' + contact.lastName;
-    this.router.navigate(['/contacts/' + contact.id]);
-  }
 
   ngOnInit() {
     this.contactService.get().subscribe((response => {
@@ -32,4 +26,11 @@ export class ContactListComponent implements OnInit {
     this.toolbar.setToolbarOptions(new ToolbarOptions(false, 'Contacts App'));
   }
 
+  onContactSelected(contact): void {
+    this.router.navigate(['/contacts/' + contact.id]);
+  }
+
+  onCreateNew() {
+    this.router.navigate(['/contacts/new']);
+  }
 }
