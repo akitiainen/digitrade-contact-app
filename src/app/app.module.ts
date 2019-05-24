@@ -17,6 +17,7 @@ import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {AvatarModule} from 'ngx-avatar';
 import {RouterModule, Routes} from '@angular/router';
 import {MatListModule, MatOptionModule, MatSelectModule, MatSidenavModule, MatToolbarModule} from '@angular/material';
+import { ToolbarComponent } from './toolbar/toolbar.component';
 
 const appRoutes: Routes = [
   {path: 'contacts', component: ContactListComponent},
@@ -30,7 +31,8 @@ const appRoutes: Routes = [
     AppComponent,
     ContactListComponent,
     ContactListItemComponent,
-    ContactDetailComponent
+    ContactDetailComponent,
+    ToolbarComponent
   ],
   imports: [
     BrowserModule,
