@@ -7,7 +7,7 @@
     </button>
   </mat-sidenav>
   <mat-sidenav-content>
-    <dtca-toolbar></dtca-toolbar>
+    <dtca-toolbar (MenuClick)="drawer.toggle()"></dtca-toolbar>
     <router-outlet></router-outlet>
   </mat-sidenav-content>
 </mat-sidenav-container>

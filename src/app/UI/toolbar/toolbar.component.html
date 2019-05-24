@@ -1,6 +1,11 @@
 <mat-toolbar color="primary">
-  <button mat-icon-button (click)="onNavigateBack()">
+  <button *ngIf="!options.backEnabled" mat-icon-button (click)="onMenuClick()">
+    <i class="material-icons">menu</i>
+  </button>
+
+  <button *ngIf="options.backEnabled" mat-icon-button (click)="onNavigateBack()">
     <i class="material-icons">arrow_back</i>
   </button>
-  <span>Contacts App</span>
+
+
 </mat-toolbar>
