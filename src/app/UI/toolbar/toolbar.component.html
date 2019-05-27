@@ -7,6 +7,9 @@
     <i class="material-icons">arrow_back</i>
   </button>
 
-  <span>{{options.title}}</span>
+  <span class="toolbarTitle">{{options.title}}</span>
 
+  <button mat-icon-button *ngFor="let action of options.actions" (click)="action.runAction()">
+    <i class="material-icons">{{action.icon}}</i>
+  </button>
 </mat-toolbar>

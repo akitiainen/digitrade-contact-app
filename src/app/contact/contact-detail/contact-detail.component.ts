@@ -22,16 +22,20 @@ export class ContactDetailComponent implements OnInit {
 
   ngOnInit() {
     this.contactId = this.route.snapshot.params.id;
-    this.toolbar.setToolbarOptions(new ToolbarOptions(true, 'Contact')
-    );
+
+    let toolbarActions: ToolbarAction[];
 
     if (isNaN(this.contactId)) {
-      console.log(this.contactId);
+      toolbarActions = [];
     } else {
-    this.contactService.getContactById(this.contactId).subscribe(response => {
-      this.contact = response;
-    });
+      toolbarActions = [new ToolbarAction(this.onEdit.bind(this), 'edit')];
+      this.contactService.getContactById(this.contactId).subscribe(response => {
+        this.contact = response;
+      });
+
     }
+    this.toolbar.setToolbarOptions(new ToolbarOptions(true, 'Contact', toolbarActions));
+
   }
 
   onEdit() {

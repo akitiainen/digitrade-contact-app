@@ -23,7 +23,7 @@ export class ContactListComponent implements OnInit {
       this.contacts = response;
     }));
 
-    this.toolbar.setToolbarOptions(new ToolbarOptions(false, 'Contacts App'));
+    this.toolbar.setToolbarOptions(new ToolbarOptions(false, 'Contacts App', []));
   }
 
   onContactSelected(contact): void {
