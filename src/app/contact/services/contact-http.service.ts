@@ -12,12 +12,12 @@ import {parseHttpResponse} from 'selenium-webdriver/http';
 export class ContactHttpService {
   private url: string;
 
-  constructor(private http: HttpClient) {
+  constructor(private httpClient: HttpClient) {
     this.url = environment.apiEndpointUrl + '/contacts';
   }
 
   get(): Observable<Contact[]> {
-    return this.http
+    return this.httpClient
       .get<Contact[]>(this.url)
       .pipe(
         map(contacts => {
@@ -28,8 +28,12 @@ export class ContactHttpService {
   }
 
   getById(id): Observable<Contact> {
-    return this.http.get(this.url + '/' + id).pipe(map(response => {
+    return this.httpClient.get(this.url + '/' + id).pipe(map(response => {
       return response as Contact;
     }));
+  }
+
+  delete(contact): Observable<any> {
+    return this.httpClient.delete(this.url + '/' + contact.id);
   }
 }

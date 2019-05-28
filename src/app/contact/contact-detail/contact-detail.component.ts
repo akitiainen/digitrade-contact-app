@@ -16,8 +16,8 @@ export class ContactDetailComponent implements OnInit {
   contactId: any;
   editingEnabled: boolean;
 
-  constructor(private router: Router, private route: ActivatedRoute,
-              private contactService: ContactService, private toolbar: ToolbarService) {
+  constructor(private router: Router, private route: ActivatedRoute, private contactService: ContactService,
+              private toolbar: ToolbarService) {
     this.contact = new Contact();
     this.editingEnabled = false;
   }
@@ -57,6 +57,9 @@ export class ContactDetailComponent implements OnInit {
   }
 
   onDelete() {
-
+    this.editingEnabled = false;
+    this.contactService.deleteContact(this.contact).subscribe(() => {
+      this.router.navigate(['/contacts']);
+    })
   }
 }

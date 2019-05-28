@@ -20,4 +20,8 @@ export class ContactService {
   getContactById(id): Observable<Contact> {
     return this.contactHttpService.getById(id);
   }
+
+  deleteContact(contact): Observable<any> {
+    return this.contactHttpService.delete(contact);
+  }
 }

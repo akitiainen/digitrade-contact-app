@@ -26,8 +26,8 @@ export class ContactListComponent implements OnInit {
     this.toolbar.setToolbarOptions(new ToolbarOptions(false, 'Contacts App', []));
   }
 
-  onContactSelected(contact): void {
-    this.router.navigate(['/contacts/' + contact.id]);
+  onContactSelected(contact) {
+    this.router.navigate(['/contacts/' + contact.id], {skipLocationChange: true});
   }
 
   onCreateNew() {
