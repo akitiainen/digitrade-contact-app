@@ -48,7 +48,7 @@ export class ContactDetailComponent implements OnInit {
       toolbarActions = [
         new ToolbarAction(this.onDelete.bind(this), 'delete'),
         new ToolbarAction(this.onEdit.bind(this), 'edit')
-        ];
+      ];
     } else {
       toolbarActions = [new ToolbarAction(this.onEdit.bind(this), 'edit')];
     }
@@ -60,6 +60,13 @@ export class ContactDetailComponent implements OnInit {
     this.editingEnabled = false;
     this.contactService.deleteContact(this.contact).subscribe(() => {
       this.router.navigate(['/contacts']);
-    })
+    });
+  }
+
+  onSave() {
+    this.contactService.createContact(this.contact).subscribe((response => {
+      console.log(response);
+      this.router.navigate(['/contacts']);
+    }));
   }
 }

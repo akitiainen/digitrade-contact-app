@@ -36,4 +36,10 @@ export class ContactHttpService {
   delete(contact): Observable<any> {
     return this.httpClient.delete(this.url + '/' + contact.id);
   }
+
+  post(contact): Observable<Contact> {
+    return this.httpClient.post(this.url, contact).pipe(map(response => {
+      return response as Contact;
+    }));
+  }
 }
