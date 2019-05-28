@@ -65,16 +65,16 @@ export class ContactDetailComponent implements OnInit {
 
   onSave() {
     if (isNaN(this.contactId)) {
-      this.contactService.createContact(this.contact).subscribe((response => {
+      this.contactService.createContact(this.contact).subscribe(response => {
         console.log(response);
         this.router.navigate(['/contacts']);
         this.snackBar.open('Contact created!', 'Ok', {duration: 3000});
-      }));
+      });
     } else {
       this.contactService.updateContact(this.contact).subscribe(response => {
         this.contact = response;
         this.editingEnabled = false;
-        this.snackBar.open('Contact modified!', 'Ok', {duration: 3000});
+        this.snackBar.open('Contact updated!', 'Ok', {duration: 3000});
       });
     }
   }
