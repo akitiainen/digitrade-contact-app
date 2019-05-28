@@ -1,5 +1,3 @@
-import {post} from 'selenium-webdriver/http';
-
 export class Contact {
   id: string;
   firstName: string;
@@ -10,7 +8,7 @@ export class Contact {
   postalCode: string;
   city: string;
 
-  constructor(id?: string, firstName?: string, lastName?: string, phone?: string, email?: string, address?: string, postalCode?: string, city?: string) {
+  constructor(firstName?: string, lastName?: string, phone?: string, email?: string, address?: string, postalCode?: string, city?: string, id?: string,) {
     this.id = id;
     this.firstName = firstName;
     this.lastName = lastName;

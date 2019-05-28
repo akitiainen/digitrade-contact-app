@@ -16,7 +16,15 @@ import {HttpClientModule} from '@angular/common/http';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {AvatarModule} from 'ngx-avatar';
 import {RouterModule, Routes} from '@angular/router';
-import {MatListModule, MatOptionModule, MatSelectModule, MatSidenavModule, MatToolbarModule} from '@angular/material';
+import {
+  MatListModule,
+  MatOptionModule,
+  MatSelectModule,
+  MatSidenavModule,
+  MatSnackBar,
+  MatSnackBarModule,
+  MatToolbarModule
+} from '@angular/material';
 import { ToolbarComponent } from './UI/toolbar/toolbar.component';
 import {ContactService} from './contact/services/contact.service';
 import {ContactHttpService} from './contact/services/contact-http.service';
@@ -54,7 +62,8 @@ const appRoutes: Routes = [
     MatSidenavModule,
     MatOptionModule,
     MatSelectModule,
-    MatListModule
+    MatListModule,
+    MatSnackBarModule
   ],
   providers: [
     ContactService,

@@ -3,12 +3,11 @@
     <div fxLayout="column" class="width-detail">
 
       <mat-form-field>
-        <input matInput [(ngModel)]="contact.firstName"
+        <input matInput
+               [(ngModel)]="contact.firstName"
                type="text"
-               required
                placeholder="First name"
                [readonly]="!editingEnabled">
-
       </mat-form-field>
       <mat-form-field>
         <input matInput [(ngModel)]="contact.lastName"
