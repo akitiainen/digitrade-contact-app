@@ -64,9 +64,17 @@ export class ContactDetailComponent implements OnInit {
   }
 
   onSave() {
-    this.contactService.createContact(this.contact).subscribe((response => {
-      console.log(response);
-      this.router.navigate(['/contacts']);
-    }));
+    if (isNaN(this.contactId)) {
+      this.contactService.createContact(this.contact).subscribe((response => {
+        console.log(response);
+        this.router.navigate(['/contacts']);
+
+      }));
+    } else {
+      this.contactService.updateContact(this.contact).subscribe(response => {
+        this.contact = response;
+        this.editingEnabled = false;
+      });
+    }
   }
 }

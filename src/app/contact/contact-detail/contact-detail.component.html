@@ -62,7 +62,7 @@
   </div>
 </mat-card>
 
-<button mat-fab class="createButton" *ngIf="contactId==null" (click)="onSave()">
+<button mat-fab class="createButton" *ngIf="editingEnabled==true" (click)="onSave()">
   <mat-icon>check</mat-icon>
 </button>
 

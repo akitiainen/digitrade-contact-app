@@ -28,4 +28,8 @@ export class ContactService {
   createContact(contact): Observable<Contact> {
     return this.contactHttpService.post(contact);
   }
+
+  updateContact(contact): Observable<Contact> {
+    return this.contactHttpService.put(contact);
+  }
 }
