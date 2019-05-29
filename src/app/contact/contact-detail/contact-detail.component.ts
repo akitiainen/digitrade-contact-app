@@ -6,6 +6,7 @@ import {ToolbarOptions} from '../../UI/toolbar/toolbar-options';
 import {ToolbarService} from '../../UI/toolbar/toolbar.service';
 import {ToolbarAction} from '../../UI/toolbar/toolbar-action';
 import {MatSnackBar} from '@angular/material';
+import {FormControl, FormGroup, Validators} from '@angular/forms';
 
 @Component({
   selector: 'dtca-contact-detail',
@@ -16,6 +17,10 @@ export class ContactDetailComponent implements OnInit {
   contact: Contact;
   contactId: any;
   editingEnabled: boolean;
+  form = new FormGroup({
+    firstName: new FormControl('', Validators.required),
+    phoneNumber: new FormControl('', Validators.required)
+  })
 
   constructor(private router: Router, private route: ActivatedRoute, private contactService: ContactService,
               private toolbar: ToolbarService, private snackBar: MatSnackBar) {

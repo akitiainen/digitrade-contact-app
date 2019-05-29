@@ -2,9 +2,9 @@ export class Contact {
   id: string;
   firstName: string;
   lastName: string;
-  phone: string;
-  email: string;
-  address: string;
+  phoneNumber: string;
+  emailAddress: string;
+  streetAddress: string;
   postalCode: string;
   city: string;
 
@@ -12,9 +12,9 @@ export class Contact {
     this.id = id;
     this.firstName = firstName;
     this.lastName = lastName;
-    this.phone = phone;
-    this.email = email;
-    this.address = address;
+    this.phoneNumber = phone;
+    this.emailAddress = email;
+    this.streetAddress = address;
     this.postalCode = postalCode;
     this.city = city;
   }

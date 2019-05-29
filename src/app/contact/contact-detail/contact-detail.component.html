@@ -3,11 +3,14 @@
     <div fxLayout="column" class="width-detail">
 
       <mat-form-field>
-        <input matInput
+        <div [formGroup]="form" (ngSubmit)="form.valid && onSave()">
+        <input matInput formControlName="firstName"
                [(ngModel)]="contact.firstName"
                type="text"
                placeholder="First name"
-               [readonly]="!editingEnabled">
+               [readonly]="!editingEnabled"
+               [ngClass]="{'is-invalid': form.get('firstName').touched && form.get('firstName').invalid}">
+        </div>
       </mat-form-field>
       <mat-form-field>
         <input matInput [(ngModel)]="contact.lastName"
@@ -18,7 +21,7 @@
 
       </mat-form-field>
       <mat-form-field>
-        <input matInput [(ngModel)]="contact.phone"
+        <input matInput [(ngModel)]="contact.phoneNumber"
                type="text"
                required
                placeholder="Phone"
@@ -26,7 +29,7 @@
 
       </mat-form-field>
       <mat-form-field>
-        <input matInput [(ngModel)]="contact.email"
+        <input matInput [(ngModel)]="contact.emailAddress"
                type="text"
                required
                placeholder="Email"
@@ -34,7 +37,7 @@
 
       </mat-form-field>
       <mat-form-field>
-        <input matInput [(ngModel)]="contact.address"
+        <input matInput [(ngModel)]="contact.streetAddress"
                type="text"
                required
                placeholder="Street address"
@@ -61,7 +64,7 @@
   </div>
 </mat-card>
 
-<button mat-fab class="createButton" *ngIf="editingEnabled==true" (click)="onSave()">
+<button mat-fab class="createButton" [disabled]="!form.valid" *ngIf="editingEnabled==true" (click)="onSave()">
   <mat-icon>check</mat-icon>
 </button>
 
