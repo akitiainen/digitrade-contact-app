@@ -21,12 +21,15 @@
 
       </mat-form-field>
       <mat-form-field>
-        <input matInput [(ngModel)]="contact.phoneNumber"
+        <div [formGroup]="form" (ngSubmit)="form.valid && onSave()">
+        <input matInput formControlName="phoneNumber"
+               [(ngModel)]="contact.phoneNumber"
                type="text"
                required
                placeholder="Phone"
-               [readonly]="!editingEnabled">
-
+               [readonly]="!editingEnabled"
+               [ngClass]="{'is-invalid': form.get('firstName').touched && form.get('firstName').invalid}">
+        </div>
       </mat-form-field>
       <mat-form-field>
         <input matInput [(ngModel)]="contact.emailAddress"
