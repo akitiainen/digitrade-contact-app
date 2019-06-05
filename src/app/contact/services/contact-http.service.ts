@@ -4,7 +4,6 @@ import {Observable} from 'rxjs';
 import {Contact} from '../contact';
 import {map} from 'rxjs/operators';
 import {environment} from '../../../environments/environment';
-import {parseHttpResponse} from 'selenium-webdriver/http';
 
 @Injectable({
   providedIn: 'root'
