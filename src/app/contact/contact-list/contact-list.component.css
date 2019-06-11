@@ -1,3 +1,7 @@
+div{
+  max-height: 100%;
+}
+
 .dtca-card{
   width: 80vw;
   margin: auto;

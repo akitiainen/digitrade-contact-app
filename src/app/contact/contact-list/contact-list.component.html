@@ -1,14 +1,16 @@
-<mat-card fxLayout="column" class="dtca-card">
-  <mat-nav-list>
-    <mat-list-item *ngFor="let c of contacts" (click)="onContactSelected(c)">
-      <ngx-avatar name="{{c.firstName}} {{c.lastName}}" size="44"></ngx-avatar>
-      <dtca-contact-list-item
-        [contact]="c"
-        (selected)="onContactSelected($event)"></dtca-contact-list-item>
-    </mat-list-item>
-  </mat-nav-list>
-</mat-card>
+<div>
+  <mat-card fxLayout="column" class="dtca-card">
+    <mat-nav-list>
+      <mat-list-item *ngFor="let c of contacts" (click)="onContactSelected(c)">
+        <ngx-avatar name="{{c.firstName}} {{c.lastName}}" size="44"></ngx-avatar>
+        <dtca-contact-list-item
+          [contact]="c"
+          (selected)="onContactSelected($event)"></dtca-contact-list-item>
+      </mat-list-item>
+    </mat-nav-list>
+  </mat-card>
 
-<button mat-fab class="addButton" (click)="onCreateNew()">
-  <mat-icon>add</mat-icon>
-</button>
+  <button mat-fab class="addButton" (click)="onCreateNew()">
+    <mat-icon>add</mat-icon>
+  </button>
+</div>
